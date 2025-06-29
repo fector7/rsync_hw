@@ -37,7 +37,7 @@ else
     echo "[$(date)] Backup FAILED" >> "$LOGFILE"
 fi
 ```
-
+cronrab
 ```
 0 2 * * * /home/fedor/backup.sh
 ```
@@ -46,3 +46,12 @@ fi
 
 ---
 
+## Задание 3*
+- Настройте ограничение на используемую пропускную способность rsync до 1 Мбит/c
+- Проверьте настройку, синхронизируя большой файл между двумя серверами
+- На проверку направьте команду и результат ее выполнения в виде скриншота
+
+```
+rsync --bwlimit=1024 -av --progress largefile fector@172.31.227.71:/tmp/backup/
+```
+![alt text](https://github.com/fector7/rsync_hw/blob/main/img/rsync3.PNG)
